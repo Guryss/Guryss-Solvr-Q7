@@ -13,9 +13,9 @@ interface GitHubRelease {
   [key: string]: any;
 }
 
+// csv 내 데이터 타입
 interface ReleaseStats {
   titles: string[],
-  year: number;
   date: string;
   weekday: string;
   count: number;
@@ -47,17 +47,16 @@ function generateStats(releases: any[]): ReleaseStats[] {
     const date = parseISO(release.published_at);
     if (isWeekend(date)) return ; // 주말 제외
 
-    const year = getYear(date);
+    const titles = [release.name || release.tag_name];
     const day = format(date, 'yyyy-MM-dd');
     const weekday = WEEKDAYS[getDay(date)];
-    const key = `${year}-${day}`;
+    const key = `$${titles}-${day}`;
 
     if (statsMap.has(key)) {
       statsMap.get(key)!.count += 1;
     } else {
       statsMap.set(key, { 
-        titles: [release.name || release.tag_name],
-        year, 
+        titles: titles,
         date: day, 
         weekday,
         count: 1 });
@@ -73,7 +72,6 @@ async function saveStatsToCSV(stats: ReleaseStats[], filename: string) {
     path: filename,
     header: [
       { id: 'titles', title: 'Release Titles' },
-      { id: 'year', title: 'Year' },
       { id: 'date', title: 'Date' },
       { id: 'weekday', title: 'Weekday'},
       { id: 'count', title: 'Release Count' },
@@ -94,6 +92,13 @@ async function main() {
     try {
         const releases = await fetchReleases(owner, repo);
         const stats = generateStats(releases);
+
+        stats.sort((a, b) => {
+          const titleA = a.titles[0]?.toLowerCase() || '';
+          const titleB = b.titles[0]?.toLowerCase() || '';
+          return titleA.localeCompare(titleB);
+        });
+
         const filename = `${repo}_release_stats.csv`;
         await saveStatsToCSV(stats, filename);
         console.log(`Saved stats for ${owner}/${repo} to ${filename}`);
