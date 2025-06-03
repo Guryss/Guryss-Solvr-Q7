@@ -1,497 +1,92 @@
 [
   {
-    "titles": [
-      "@seed-design/sample-package@0.0.94"
-    ],
-    "date": "2025-06-03",
-    "weekday": "Tuesday",
-    "count": 1,
-    "author": "user5",
-    "description": "\ud83d\udd27 Patch Changes - Updated internal dependencies",
-    "createdAt": "2025-06-03 16:19"
+    "id": 101,
+    "name": "v1.0.0 - Initial Release",
+    "tag_name": "v1.0.0",
+    "body": "첫 번째 공식 릴리즈입니다.\n- 주요 기능 구현 완료\n- 초기 버그 수정",
+    "published_at": "2025-05-15T10:00:00Z",
+    "created_at": "2025-05-10T08:30:00Z",
+    "author": "alice"
   },
   {
-    "titles": [
-      "@seed-design/sample-package@0.0.72"
-    ],
-    "date": "2025-06-02",
-    "weekday": "Monday",
-    "count": 1,
-    "author": "user1",
-    "description": "-   4610b5b: PullToRefresh에 disabled prop을 추가합니다.\n-   739b6bf: Tabs.Indicator의 width가 첫 렌더링 시 0으로 설정되는 문제를 수정합니다.\nTabs의 불필요한 리렌더링을 줄입니다.",
-    "createdAt": "2025-06-02 16:19"
+    "id": 102,
+    "name": "v1.1.0 - Feature Update",
+    "tag_name": "v1.1.0",
+    "body": "새로운 기능 추가 및 성능 개선\n\n- 사용자 프로필 페이지 개선\n- 로그인 속도 향상",
+    "published_at": "2025-05-20T15:30:00Z",
+    "created_at": "2025-05-18T12:45:00Z",
+    "author": "bob"
   },
   {
-    "titles": [
-      "@seed-design/sample-package@0.0.96"
-    ],
-    "date": "2025-05-30",
-    "weekday": "Friday",
-    "count": 1,
-    "author": "user2",
-    "description": "\ud83d\udd27 Patch Changes - Updated internal dependencies",
-    "createdAt": "2025-05-30 16:19"
+    "id": 103,
+    "name": "v1.1.1 - Bug Fix",
+    "tag_name": "v1.1.1",
+    "body": "긴급 버그 수정 릴리즈\n- 회원가입 오류 수정\n- UI 깨짐 현상 해결",
+    "published_at": "2025-05-22T09:15:00Z",
+    "created_at": "2025-05-21T20:00:00Z",
+    "author": "charlie"
   },
   {
-    "titles": [
-      "@seed-design/sample-package@0.0.11"
-    ],
-    "date": "2025-05-30",
-    "weekday": "Friday",
-    "count": 1,
-    "author": "user1",
-    "description": "\ud83d\udd27 Patch Changes - Updated internal dependencies",
-    "createdAt": "2025-05-30 16:19"
+    "id": 104,
+    "name": "v1.2.0 - Major Update",
+    "tag_name": "v1.2.0",
+    "body": "대규모 업데이트\n- 다크 모드 지원 추가\n- 새로운 대시보드 UI 적용\n- API 최적화",
+    "published_at": "2025-05-30T18:00:00Z",
+    "created_at": "2025-05-28T14:00:00Z",
+    "author": "alice"
   },
   {
-    "titles": [
-      "@seed-design/sample-package@0.0.3"
-    ],
-    "date": "2025-05-29",
-    "weekday": "Thursday",
-    "count": 1,
-    "author": "user4",
-    "description": "\ud83d\udd27 Patch Changes - Updated internal dependencies",
-    "createdAt": "2025-05-29 16:19"
+    "id": 105,
+    "name": "v1.2.1 - Patch",
+    "tag_name": "v1.2.1",
+    "body": "작은 버그 수정 및 문서 업데이트\n- 도움말 페이지 수정\n- 인증 관련 버그 수정",
+    "published_at": "2025-06-01T11:30:00Z",
+    "created_at": "2025-05-31T22:00:00Z",
+    "author": "bob"
   },
   {
-    "titles": [
-      "@seed-design/sample-package@0.0.28"
-    ],
-    "date": "2025-05-29",
-    "weekday": "Thursday",
-    "count": 1,
-    "author": "user3",
-    "description": "\ud83d\udd27 Patch Changes - Updated internal dependencies",
-    "createdAt": "2025-05-29 16:19"
+    "id": 106,
+    "name": "v1.3.0 - New Features",
+    "tag_name": "v1.3.0",
+    "body": "신규 기능 릴리즈\n- 채팅 기능 도입\n- 알림 시스템 개선\n- 백엔드 안정화",
+    "published_at": "2025-06-10T09:00:00Z",
+    "created_at": "2025-06-08T16:00:00Z",
+    "author": "david"
   },
   {
-    "titles": [
-      "@seed-design/sample-package@0.0.17"
-    ],
-    "date": "2025-05-29",
-    "weekday": "Thursday",
-    "count": 1,
-    "author": "user1",
-    "description": "\ud83d\udd27 Patch Changes - Updated internal dependencies",
-    "createdAt": "2025-05-29 16:19"
+    "id": 107,
+    "name": "v1.3.1 - Bug Fixes",
+    "tag_name": "v1.3.1",
+    "body": "버그 수정 릴리즈\n- 채팅 알림 오류 수정\n- 메모리 누수 해결",
+    "published_at": "2025-06-12T14:30:00Z",
+    "created_at": "2025-06-11T20:00:00Z",
+    "author": "emily"
   },
   {
-    "titles": [
-      "@seed-design/sample-package@0.0.15"
-    ],
-    "date": "2025-05-28",
-    "weekday": "Wednesday",
-    "count": 1,
-    "author": "user4",
-    "description": "\ud83d\udd27 Patch Changes - Updated internal dependencies",
-    "createdAt": "2025-05-28 16:19"
+    "id": 108,
+    "name": "v1.4.0 - UX Improvements",
+    "tag_name": "v1.4.0",
+    "body": "사용자 경험 개선\n- 모바일 UI 개선\n- 접근성 향상\n- 반응 속도 개선",
+    "published_at": "2025-06-20T08:45:00Z",
+    "created_at": "2025-06-18T14:00:00Z",
+    "author": "frank"
   },
   {
-    "titles": [
-      "@seed-design/sample-package@0.0.31"
-    ],
-    "date": "2025-05-28",
-    "weekday": "Wednesday",
-    "count": 1,
-    "author": "user2",
-    "description": "\ud83d\udd27 Patch Changes - Updated internal dependencies",
-    "createdAt": "2025-05-28 16:19"
+    "id": 109,
+    "name": "v1.4.1 - Hotfix",
+    "tag_name": "v1.4.1",
+    "body": "긴급 핫픽스\n- 로그인 실패 문제 해결\n- 데이터 동기화 버그 수정",
+    "published_at": "2025-06-22T17:00:00Z",
+    "created_at": "2025-06-21T22:30:00Z",
+    "author": "grace"
   },
   {
-    "titles": [
-      "@seed-design/sample-package@0.0.57"
-    ],
-    "date": "2025-05-27",
-    "weekday": "Tuesday",
-    "count": 1,
-    "author": "user1",
-    "description": "\ud83d\udd27 Patch Changes - Updated internal dependencies",
-    "createdAt": "2025-05-27 16:19"
-  },
-  {
-    "titles": [
-      "@seed-design/sample-package@0.0.98"
-    ],
-    "date": "2025-05-27",
-    "weekday": "Tuesday",
-    "count": 1,
-    "author": "user3",
-    "description": "\ud83d\udd27 Patch Changes - Updated internal dependencies",
-    "createdAt": "2025-05-27 16:19"
-  },
-  {
-    "titles": [
-      "@seed-design/sample-package@0.0.49"
-    ],
-    "date": "2025-05-27",
-    "weekday": "Tuesday",
-    "count": 1,
-    "author": "user5",
-    "description": "\ud83d\udd27 Patch Changes - Updated internal dependencies",
-    "createdAt": "2025-05-27 16:19"
-  },
-  {
-    "titles": [
-      "@seed-design/sample-package@0.0.64"
-    ],
-    "date": "2025-05-26",
-    "weekday": "Monday",
-    "count": 1,
-    "author": "user5",
-    "description": "\ud83d\udd27 Patch Changes - Updated internal dependencies",
-    "createdAt": "2025-05-26 16:19"
-  },
-  {
-    "titles": [
-      "@seed-design/sample-package@0.0.92"
-    ],
-    "date": "2025-05-23",
-    "weekday": "Friday",
-    "count": 1,
-    "author": "user5",
-    "description": "\ud83d\udd27 Patch Changes - Updated internal dependencies",
-    "createdAt": "2025-05-23 16:19"
-  },
-  {
-    "titles": [
-      "@seed-design/sample-package@0.0.34"
-    ],
-    "date": "2025-05-23",
-    "weekday": "Friday",
-    "count": 1,
-    "author": "user2",
-    "description": "\ud83d\udd27 Patch Changes - Updated internal dependencies",
-    "createdAt": "2025-05-23 16:19"
-  },
-  {
-    "titles": [
-      "@seed-design/sample-package@0.0.25"
-    ],
-    "date": "2025-05-23",
-    "weekday": "Friday",
-    "count": 1,
-    "author": "user2",
-    "description": "\ud83d\udd27 Patch Changes - Updated internal dependencies",
-    "createdAt": "2025-05-23 16:19"
-  },
-  {
-    "titles": [
-      "@seed-design/sample-package@0.0.99"
-    ],
-    "date": "2025-05-22",
-    "weekday": "Thursday",
-    "count": 1,
-    "author": "user5",
-    "description": "\ud83d\udd27 Patch Changes - Updated internal dependencies",
-    "createdAt": "2025-05-22 16:19"
-  },
-  {
-    "titles": [
-      "@seed-design/sample-package@0.0.27"
-    ],
-    "date": "2025-05-22",
-    "weekday": "Thursday",
-    "count": 1,
-    "author": "user5",
-    "description": "\ud83d\udd27 Patch Changes - Updated internal dependencies",
-    "createdAt": "2025-05-22 16:19"
-  },
-  {
-    "titles": [
-      "@seed-design/sample-package@0.0.67"
-    ],
-    "date": "2025-05-22",
-    "weekday": "Thursday",
-    "count": 1,
-    "author": "user2",
-    "description": "\ud83d\udd27 Patch Changes - Updated internal dependencies",
-    "createdAt": "2025-05-22 16:19"
-  },
-  {
-    "titles": [
-      "@seed-design/sample-package@0.0.33"
-    ],
-    "date": "2025-05-21",
-    "weekday": "Wednesday",
-    "count": 1,
-    "author": "user5",
-    "description": "\ud83d\udd27 Patch Changes - Updated internal dependencies",
-    "createdAt": "2025-05-21 16:19"
-  },
-  {
-    "titles": [
-      "@seed-design/sample-package@0.0.61"
-    ],
-    "date": "2025-05-21",
-    "weekday": "Wednesday",
-    "count": 1,
-    "author": "user5",
-    "description": "\ud83d\udd27 Patch Changes - Updated internal dependencies",
-    "createdAt": "2025-05-21 16:19"
-  },
-  {
-    "titles": [
-      "@seed-design/sample-package@0.0.66"
-    ],
-    "date": "2025-05-21",
-    "weekday": "Wednesday",
-    "count": 1,
-    "author": "user3",
-    "description": "\ud83d\udd27 Patch Changes - Updated internal dependencies",
-    "createdAt": "2025-05-21 16:19"
-  },
-  {
-    "titles": [
-      "@seed-design/sample-package@0.0.29"
-    ],
-    "date": "2025-05-20",
-    "weekday": "Tuesday",
-    "count": 1,
-    "author": "user3",
-    "description": "\ud83d\udd27 Patch Changes - Updated internal dependencies",
-    "createdAt": "2025-05-20 16:19"
-  },
-  {
-    "titles": [
-      "@seed-design/sample-package@0.0.55"
-    ],
-    "date": "2025-05-20",
-    "weekday": "Tuesday",
-    "count": 1,
-    "author": "user1",
-    "description": "\ud83d\udd27 Patch Changes - Updated internal dependencies",
-    "createdAt": "2025-05-20 16:19"
-  },
-  {
-    "titles": [
-      "@seed-design/sample-package@0.0.71"
-    ],
-    "date": "2025-05-20",
-    "weekday": "Tuesday",
-    "count": 1,
-    "author": "user3",
-    "description": "\ud83d\udd27 Patch Changes - Updated internal dependencies",
-    "createdAt": "2025-05-20 16:19"
-  },
-  {
-    "titles": [
-      "@seed-design/sample-package@0.0.36"
-    ],
-    "date": "2025-05-19",
-    "weekday": "Monday",
-    "count": 1,
-    "author": "user4",
-    "description": "\ud83d\udd27 Patch Changes - Updated internal dependencies",
-    "createdAt": "2025-05-19 16:19"
-  },
-  {
-    "titles": [
-      "@seed-design/sample-package@0.0.65"
-    ],
-    "date": "2025-05-19",
-    "weekday": "Monday",
-    "count": 1,
-    "author": "user4",
-    "description": "\ud83d\udd27 Patch Changes - Updated internal dependencies",
-    "createdAt": "2025-05-19 16:19"
-  },
-  {
-    "titles": [
-      "@seed-design/sample-package@0.0.61"
-    ],
-    "date": "2025-05-16",
-    "weekday": "Friday",
-    "count": 1,
-    "author": "user5",
-    "description": "\ud83d\udd27 Patch Changes - Updated internal dependencies",
-    "createdAt": "2025-05-16 16:19"
-  },
-  {
-    "titles": [
-      "@seed-design/sample-package@0.0.7"
-    ],
-    "date": "2025-05-16",
-    "weekday": "Friday",
-    "count": 1,
-    "author": "user4",
-    "description": "\ud83d\udd27 Patch Changes - Updated internal dependencies",
-    "createdAt": "2025-05-16 16:19"
-  },
-  {
-    "titles": [
-      "@seed-design/sample-package@0.0.87"
-    ],
-    "date": "2025-05-15",
-    "weekday": "Thursday",
-    "count": 1,
-    "author": "user2",
-    "description": "\ud83d\udd27 Patch Changes - Updated internal dependencies",
-    "createdAt": "2025-05-15 16:19"
-  },
-  {
-    "titles": [
-      "@seed-design/sample-package@0.0.60"
-    ],
-    "date": "2025-05-15",
-    "weekday": "Thursday",
-    "count": 1,
-    "author": "user2",
-    "description": "\ud83d\udd27 Patch Changes - Updated internal dependencies",
-    "createdAt": "2025-05-15 16:19"
-  },
-  {
-    "titles": [
-      "@seed-design/sample-package@0.0.98"
-    ],
-    "date": "2025-05-14",
-    "weekday": "Wednesday",
-    "count": 1,
-    "author": "user2",
-    "description": "\ud83d\udd27 Patch Changes - Updated internal dependencies",
-    "createdAt": "2025-05-14 16:19"
-  },
-  {
-    "titles": [
-      "@seed-design/sample-package@0.0.42"
-    ],
-    "date": "2025-05-14",
-    "weekday": "Wednesday",
-    "count": 1,
-    "author": "user4",
-    "description": "\ud83d\udd27 Patch Changes - Updated internal dependencies",
-    "createdAt": "2025-05-14 16:19"
-  },
-  {
-    "titles": [
-      "@seed-design/sample-package@0.0.73"
-    ],
-    "date": "2025-05-14",
-    "weekday": "Wednesday",
-    "count": 1,
-    "author": "user3",
-    "description": "\ud83d\udd27 Patch Changes - Updated internal dependencies",
-    "createdAt": "2025-05-14 16:19"
-  },
-  {
-    "titles": [
-      "@seed-design/sample-package@0.0.2"
-    ],
-    "date": "2025-05-13",
-    "weekday": "Tuesday",
-    "count": 1,
-    "author": "user4",
-    "description": "\ud83d\udd27 Patch Changes - Updated internal dependencies",
-    "createdAt": "2025-05-13 16:19"
-  },
-  {
-    "titles": [
-      "@seed-design/sample-package@0.0.30"
-    ],
-    "date": "2025-05-12",
-    "weekday": "Monday",
-    "count": 1,
-    "author": "user3",
-    "description": "\ud83d\udd27 Patch Changes - Updated internal dependencies",
-    "createdAt": "2025-05-12 16:19"
-  },
-  {
-    "titles": [
-      "@seed-design/sample-package@0.0.75"
-    ],
-    "date": "2025-05-09",
-    "weekday": "Friday",
-    "count": 1,
-    "author": "user4",
-    "description": "\ud83d\udd27 Patch Changes - Updated internal dependencies",
-    "createdAt": "2025-05-09 16:19"
-  },
-  {
-    "titles": [
-      "@seed-design/sample-package@0.0.6"
-    ],
-    "date": "2025-05-09",
-    "weekday": "Friday",
-    "count": 1,
-    "author": "user5",
-    "description": "\ud83d\udd27 Patch Changes - Updated internal dependencies",
-    "createdAt": "2025-05-09 16:19"
-  },
-  {
-    "titles": [
-      "@seed-design/sample-package@0.0.59"
-    ],
-    "date": "2025-05-09",
-    "weekday": "Friday",
-    "count": 1,
-    "author": "user1",
-    "description": "\ud83d\udd27 Patch Changes - Updated internal dependencies",
-    "createdAt": "2025-05-09 16:19"
-  },
-  {
-    "titles": [
-      "@seed-design/sample-package@0.0.28"
-    ],
-    "date": "2025-05-08",
-    "weekday": "Thursday",
-    "count": 1,
-    "author": "user3",
-    "description": "\ud83d\udd27 Patch Changes - Updated internal dependencies",
-    "createdAt": "2025-05-08 16:19"
-  },
-  {
-    "titles": [
-      "@seed-design/sample-package@0.0.21"
-    ],
-    "date": "2025-05-08",
-    "weekday": "Thursday",
-    "count": 1,
-    "author": "user3",
-    "description": "\ud83d\udd27 Patch Changes - Updated internal dependencies",
-    "createdAt": "2025-05-08 16:19"
-  },
-  {
-    "titles": [
-      "@seed-design/sample-package@0.0.30"
-    ],
-    "date": "2025-05-07",
-    "weekday": "Wednesday",
-    "count": 1,
-    "author": "user1",
-    "description": "\ud83d\udd27 Patch Changes - Updated internal dependencies",
-    "createdAt": "2025-05-07 16:19"
-  },
-  {
-    "titles": [
-      "@seed-design/sample-package@0.0.87"
-    ],
-    "date": "2025-05-06",
-    "weekday": "Tuesday",
-    "count": 1,
-    "author": "user4",
-    "description": "\ud83d\udd27 Patch Changes - Updated internal dependencies",
-    "createdAt": "2025-05-06 16:19"
-  },
-  {
-    "titles": [
-      "@seed-design/sample-package@0.0.10"
-    ],
-    "date": "2025-05-06",
-    "weekday": "Tuesday",
-    "count": 1,
-    "author": "user3",
-    "description": "\ud83d\udd27 Patch Changes - Updated internal dependencies",
-    "createdAt": "2025-05-06 16:19"
-  },
-  {
-    "titles": [
-      "@seed-design/sample-package@0.0.18"
-    ],
-    "date": "2025-05-05",
-    "weekday": "Monday",
-    "count": 1,
-    "author": "user1",
-    "description": "\ud83d\udd27 Patch Changes - Updated internal dependencies",
-    "createdAt": "2025-05-05 16:19"
+    "id": 110,
+    "name": "v1.5.0 - Security Update",
+    "tag_name": "v1.5.0",
+    "body": "보안 업데이트\n- OAuth 2.0 인증 강화\n- 데이터 암호화 개선\n- 취약점 패치",
+    "published_at": "2025-06-28T11:15:00Z",
+    "created_at": "2025-06-27T09:45:00Z",
+    "author": "henry"
   }
 ]
