@@ -1,5 +1,5 @@
 import fetch from 'node-fetch';
-import { parseISO, getYear, getISOWeek, format } from 'date-fns';
+import { parseISO, getYear, getISOWeek, format, getDay } from 'date-fns';
 import { createObjectCsvWriter } from 'csv-writer';
 
 // 깃허브 릴리즈 데이터 DTO
@@ -31,11 +31,19 @@ async function fetchReleases(owner: string, repo: string): Promise<GitHubRelease
   return data as GitHubRelease[];
 }
 
+// 주말인지 확인하는 함수
+function isWeekend(date: Date): boolean {
+    const day = getDay(date);
+    return day === 0 || day === 6;
+}
+
 function generateStats(releases: any[]): ReleaseStats[] {
   const statsMap = new Map<string, ReleaseStats>();
 
   releases.forEach(release => {
     const date = parseISO(release.published_at);
+    if (isWeekend(date)) return ; // 주말 제외
+
     const year = getYear(date);
     const week = getISOWeek(date);
     const day = format(date, 'yyyy-MM-dd');
