@@ -17,8 +17,11 @@ interface ReleaseStats {
   year: number;
   week: number;
   date: string;
+  weekday: string;
   count: number;
 }
+
+const WEEKDAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 // 레포지토리 데이터 비동기 fetch 함수
 async function fetchReleases(owner: string, repo: string): Promise<GitHubRelease[]> {
@@ -47,12 +50,13 @@ function generateStats(releases: any[]): ReleaseStats[] {
     const year = getYear(date);
     const week = getISOWeek(date);
     const day = format(date, 'yyyy-MM-dd');
+    const weekday = WEEKDAYS[getDay(date)];
     const key = `${year}-W${week}-${day}`;
 
     if (statsMap.has(key)) {
       statsMap.get(key)!.count += 1;
     } else {
-      statsMap.set(key, { year, week, date: day, count: 1 });
+      statsMap.set(key, { year, week, date: day, weekday,count: 1 });
     }
   });
 
@@ -67,6 +71,7 @@ async function saveStatsToCSV(stats: ReleaseStats[], filename: string) {
       { id: 'year', title: 'Year' },
       { id: 'week', title: 'Week' },
       { id: 'date', title: 'Date' },
+      { id: 'weekday', title: 'Weekday'},
       { id: 'count', title: 'Release Count' },
     ],
   });
