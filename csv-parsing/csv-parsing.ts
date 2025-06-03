@@ -14,8 +14,8 @@ interface GitHubRelease {
 }
 
 interface ReleaseStats {
+  titles: string[],
   year: number;
-  week: number;
   date: string;
   weekday: string;
   count: number;
@@ -48,15 +48,19 @@ function generateStats(releases: any[]): ReleaseStats[] {
     if (isWeekend(date)) return ; // 주말 제외
 
     const year = getYear(date);
-    const week = getISOWeek(date);
     const day = format(date, 'yyyy-MM-dd');
     const weekday = WEEKDAYS[getDay(date)];
-    const key = `${year}-W${week}-${day}`;
+    const key = `${year}-${day}`;
 
     if (statsMap.has(key)) {
       statsMap.get(key)!.count += 1;
     } else {
-      statsMap.set(key, { year, week, date: day, weekday,count: 1 });
+      statsMap.set(key, { 
+        titles: [release.name || release.tag_name],
+        year, 
+        date: day, 
+        weekday,
+        count: 1 });
     }
   });
 
@@ -68,8 +72,8 @@ async function saveStatsToCSV(stats: ReleaseStats[], filename: string) {
   const csvWriter = createObjectCsvWriter({
     path: filename,
     header: [
+      { id: 'titles', title: 'Release Titles' },
       { id: 'year', title: 'Year' },
-      { id: 'week', title: 'Week' },
       { id: 'date', title: 'Date' },
       { id: 'weekday', title: 'Weekday'},
       { id: 'count', title: 'Release Count' },
