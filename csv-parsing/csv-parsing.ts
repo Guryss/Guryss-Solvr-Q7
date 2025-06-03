@@ -4,18 +4,18 @@ import { createObjectCsvWriter } from 'csv-writer';
 
 // 깃허브 릴리즈 데이터 DTO
 interface GitHubRelease {
-  id: number;
-  name: string;
-  tag_name: string;
-  published_at: string;
-  draft: boolean;
-  prerelease: boolean;
+  id: number; // 릴리즈 고유 id
+  name: string; // 릴리즈 타이틀 
+  tag_name: string; // 릴리즈 태그명 (버전)
+  body: string, // 릴리즈 디스크립션
+  published_at: string; // 공개 시각
+  created_at: string; // 생성 시각
   [key: string]: any;
 }
 
 // csv 내 데이터 타입
 interface ReleaseStats {
-  titles: string[],
+  releaseInfo: string[],
   date: string;
   weekday: string;
   count: number;
@@ -46,25 +46,40 @@ function generateStats(releases: any[]): ReleaseStats[] {
   releases.forEach(release => {
     const dateObj = parseISO(release.published_at);
     if (isWeekend(dateObj)) return ; // 주말 제외
+
     const date = format(dateObj, 'yyyy-MM-dd');
-    const weekday = format(dateObj, 'EEEE'); // 요일 (ex: Monday)
+    const weekday = format(dateObj, 'EEEE');
     const title = release.name || release.tag_name;
+    const description = ((release.body || '').split(/[\r\n]+/) as string[])
+      .map((line: string) => line.trim())
+      .filter((line: string) =>
+        line &&
+        line !== '### Patch Changes' &&
+        line !== '• ### Patch Changes' &&
+        line !== '🔧 Patch Changes'
+      )
+      .map((line: string) => `${line}`)
+      .join('\n');
+    const createdAt = format(parseISO(release.created_at), 'yyyy-MM-dd HH:mm');
     const key = `$${date}`;
+
+    const fullText = [
+    '───────────────',
+    `📦 ${title}`,
+    `🗓 ${createdAt}`,
+    '',
+    description ? `🔧 Patch Changes\n${description}` : '🔧 Patch Changes\n• (No description)',
+  ].join('\n');
 
     if (statsMap.has(key)) {
       const stat = statsMap.get(key)!;
       stat.count += 1;
-
-      if (Array.isArray(stat.titles)) {
-        stat.titles.push(title);
-      } else {
-        stat.titles = [title];
-      }
+      stat.releaseInfo.push(fullText); 
     } else {
       statsMap.set(key, {
-        titles: [title],
-        date,
-        weekday,
+        releaseInfo: [fullText],
+        date: date,
+        weekday: weekday,
         count: 1,
       });
     }
@@ -81,13 +96,13 @@ async function saveStatsToCSV(stats: ReleaseStats[], filename: string) {
       { id: 'date', title: 'Date' },
       { id: 'weekday', title: 'Weekday'},
       { id: 'count', title: 'Release Count' },
-      { id: 'titles', title: 'Release Titles' },
+      { id: 'releaseInfo', title: 'Releases' }
     ],
   });
 
   const records = stats.map(stat => ({
     ...stat,
-    titles: stat.titles.join('\n'),
+    releaseInfo: stat.releaseInfo.join('\n'),
   }));
 
   await csvWriter.writeRecords(records);
@@ -104,7 +119,6 @@ async function main() {
     try {
         const releases = await fetchReleases(owner, repo);
         const stats = generateStats(releases);
-
         const filename = `${repo}_release_stats.csv`;
         await saveStatsToCSV(stats, filename);
         console.log(`Saved stats for ${owner}/${repo} to ${filename}`);
