@@ -27,5 +27,10 @@
   },
   "engines": {
     "node": ">=22.0.0"
+  },
+  "dependencies": {
+    "csv-writer": "^1.6.0",
+    "date-fns": "^4.1.0",
+    "node-fetch": "^3.3.2"
   }
 }
