@@ -44,22 +44,29 @@ function generateStats(releases: any[]): ReleaseStats[] {
   const statsMap = new Map<string, ReleaseStats>();
 
   releases.forEach(release => {
-    const date = parseISO(release.published_at);
-    if (isWeekend(date)) return ; // 주말 제외
-
-    const titles = [release.name || release.tag_name];
-    const day = format(date, 'yyyy-MM-dd');
-    const weekday = WEEKDAYS[getDay(date)];
-    const key = `$${titles}-${day}`;
+    const dateObj = parseISO(release.published_at);
+    if (isWeekend(dateObj)) return ; // 주말 제외
+    const date = format(dateObj, 'yyyy-MM-dd');
+    const weekday = format(dateObj, 'EEEE'); // 요일 (ex: Monday)
+    const title = release.name || release.tag_name;
+    const key = `$${date}`;
 
     if (statsMap.has(key)) {
-      statsMap.get(key)!.count += 1;
+      const stat = statsMap.get(key)!;
+      stat.count += 1;
+
+      if (Array.isArray(stat.titles)) {
+        stat.titles.push(title);
+      } else {
+        stat.titles = [title];
+      }
     } else {
-      statsMap.set(key, { 
-        titles: titles,
-        date: day, 
+      statsMap.set(key, {
+        titles: [title],
+        date,
         weekday,
-        count: 1 });
+        count: 1,
+      });
     }
   });
 
@@ -71,14 +78,19 @@ async function saveStatsToCSV(stats: ReleaseStats[], filename: string) {
   const csvWriter = createObjectCsvWriter({
     path: filename,
     header: [
-      { id: 'titles', title: 'Release Titles' },
       { id: 'date', title: 'Date' },
       { id: 'weekday', title: 'Weekday'},
       { id: 'count', title: 'Release Count' },
+      { id: 'titles', title: 'Release Titles' },
     ],
   });
 
-  await csvWriter.writeRecords(stats);
+  const records = stats.map(stat => ({
+    ...stat,
+    titles: stat.titles.join('\n'),
+  }));
+
+  await csvWriter.writeRecords(records);
 }
 
 async function main() {
@@ -92,12 +104,6 @@ async function main() {
     try {
         const releases = await fetchReleases(owner, repo);
         const stats = generateStats(releases);
-
-        stats.sort((a, b) => {
-          const titleA = a.titles[0]?.toLowerCase() || '';
-          const titleB = b.titles[0]?.toLowerCase() || '';
-          return titleA.localeCompare(titleB);
-        });
 
         const filename = `${repo}_release_stats.csv`;
         await saveStatsToCSV(stats, filename);
